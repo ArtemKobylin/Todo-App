@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App</title>
+</head>
+
+<body>
+    <h1>This is your todo application</h1>
+
+    <label>
+        Search: <input id="input-filter" type="text" placeholder="Enter any filter">
+    </label><br><br>
+
+
+    <label>
+        Hide completed: <input type="checkbox" name="hideCompleted" id="hide-completed">
+    </label><br><br>
+
+    <div id="todos"></div>
+
+    <form id="setting-form">
+        <input id="input-todo" type="text" placeholder="Enter something to do" name="inputTodo">
+        <button id="add-todo">Add todo</button><br><br>
+    </form>
+
+    <script src="./scripts/bundle.js"></script>
+</body>
+
+</html>

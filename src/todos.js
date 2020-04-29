@@ -1,7 +1,6 @@
 import { v4 as uuidv4 } from "uuid"
 import { getFilters } from "./filters"
 
-console.log("todos.js")
 let todos = []
 
 const loadTodos = () => {
@@ -18,16 +17,16 @@ const saveTodos = () => {
     localStorage.setItem("todos", JSON.stringify(todos))
 }
 
-const addTodo = () => {
-    const title = document.querySelector("#input-todo").value
-    
-    todos.push({
-        id: uuidv4(),
-        title,
-        completed: false
-    })
+const addTodo = (title) => {
 
-    saveTodos()
+    if (title) {
+        todos.push({
+            id: uuidv4(),
+            title,
+            completed: false
+        })
+        saveTodos()
+    }
 
     document.querySelector("#input-todo").value = ""
 }
@@ -37,9 +36,8 @@ const removeTodo = (id) => {
 
     if (todoIndex > -1) {
         todos.splice(todoIndex, 1)
+        saveTodos()
     }
-
-    saveTodos()
 }
 
 const toggleTodo = (id) => {
@@ -63,4 +61,10 @@ const filterTodos = () => {
 
 loadTodos()
 
-export { addTodo, removeTodo, toggleTodo, filterTodos, loadTodos }
+export {
+    addTodo,
+    removeTodo,
+    toggleTodo,
+    filterTodos,
+    loadTodos
+}

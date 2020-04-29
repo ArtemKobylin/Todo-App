@@ -4,28 +4,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="icon" href="./images/favicon.png">
     <title>Todo App</title>
 </head>
 
 <body>
-    <h1>This is your todo application</h1>
+    <header class="header">
+        <div class="container">
+            <h1 class="header__title">Todo App</h1>
+            <h2 class="header__subtitle">Get all the job done</h2>
+        </div>
+    </header>
+    <div class="actions">
+        <div class="actions__container actions__container--spaced">
+            <input type="text" id="input-filter" class="input" placeholder="Enter any filter">
+            <label class="checkbox"><input type="checkbox" name="hideCompleted" id="hide-completed">Hide completed
+            </label>
+        </div>
+    </div>
+    <div class="container">
+        <div id="todos"></div>
 
-    <label>
-        Search: <input id="input-filter" type="text" placeholder="Enter any filter">
-    </label><br><br>
-
-
-    <label>
-        Hide completed: <input type="checkbox" name="hideCompleted" id="hide-completed">
-    </label><br><br>
-
-    <div id="todos"></div>
-
-    <form id="setting-form">
-        <input id="input-todo" type="text" placeholder="Enter something to do" name="inputTodo">
-        <button id="add-todo">Add todo</button><br><br>
-    </form>
-
+        <form id="setting-form">
+            <input type="text" id="input-todo" class="input" name="inputTodo" placeholder="Enter something to do" >
+            <button id="add-todo" class="button">Add todo</button><br><br>
+        </form>
+    </div>
     <script src="./scripts/bundle.js"></script>
 </body>
 

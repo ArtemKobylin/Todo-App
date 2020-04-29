@@ -2,13 +2,11 @@ import { setFilters } from "./filters"
 import { addTodo, loadTodos } from "./todos"
 import { renderTodos } from "./views"
 
-console.log("index.js")
-
 renderTodos()
 
 document.querySelector("#setting-form").addEventListener("submit", (e) => {
     e.preventDefault()
-    addTodo()
+    addTodo(e.target.elements.inputTodo.value.trim())
     renderTodos()
 })
 

@@ -1,4 +1,3 @@
-console.log("filters.js")
 const filters = {
     searchText: "",
     hideCompleted: false
